@@ -930,7 +930,7 @@
   document.addEventListener('scroll', onScrollHeader, { passive: true });
   onScrollHeader();
 
-  // Exit-intent popup
+  // Timed popup: appears once per session, 5s after page load
   const exitPopup = document.getElementById('exitPopup');
   const exitPopupClose = document.getElementById('exitPopupClose');
   const exitPopupForm = document.getElementById('exitPopupForm');
@@ -946,9 +946,7 @@
   function closeExitPopup() {
     exitPopup.classList.remove('open');
   }
-  document.addEventListener('mouseout', (e) => {
-    if (!e.relatedTarget && e.clientY <= 0) openExitPopup();
-  });
+  setTimeout(openExitPopup, 5000);
   exitPopupClose.addEventListener('click', closeExitPopup);
   exitPopup.addEventListener('click', (e) => { if (e.target === exitPopup) closeExitPopup(); });
   document.addEventListener('keydown', (e) => {
