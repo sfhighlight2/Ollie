@@ -20,6 +20,12 @@
 <meta name="twitter:title" content="Smarter Aircraft | Business Jet Transactions">
 <meta name="twitter:description" content="Buyer-side private jet brokerage and acquisition advisory. Learn how to turn a business jet into a $1-2M annual revenue asset.">
 <meta name="twitter:image" content="og-image.jpg">
+
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -48,14 +54,35 @@
     display:flex;align-items:center;justify-content:center;
     transition:opacity .5s ease, visibility .5s ease;
   }
-  #preloader img{width:160px;height:auto;animation:preloader-pulse 1.4s ease-in-out infinite;}
   #preloader.loaded{opacity:0;visibility:hidden;}
-  @keyframes preloader-pulse{
-    0%,100%{opacity:1;transform:scale(1);}
-    50%{opacity:.6;transform:scale(.94);}
+  .preloader-stage{position:relative;width:220px;height:130px;}
+  .preloader-stage img{
+    position:absolute;top:50%;left:50%;
+    max-width:200px;max-height:110px;width:auto;height:auto;
+    transform:translate(-50%,-50%) scale(.92);
+    opacity:0;
+  }
+  .preloader-stage img:nth-child(1){animation:preloader-cycle-1 2.7s ease-in-out infinite;}
+  .preloader-stage img:nth-child(2){animation:preloader-cycle-2 2.7s ease-in-out infinite;}
+  .preloader-stage img:nth-child(3){animation:preloader-cycle-3 2.7s ease-in-out infinite;}
+  @keyframes preloader-cycle-1{
+    0%,4%{opacity:0;transform:translate(-50%,-50%) scale(.92);}
+    10%,25%{opacity:1;transform:translate(-50%,-50%) scale(1);}
+    31%,100%{opacity:0;transform:translate(-50%,-50%) scale(.92);}
+  }
+  @keyframes preloader-cycle-2{
+    0%,37%{opacity:0;transform:translate(-50%,-50%) scale(.92);}
+    43%,58%{opacity:1;transform:translate(-50%,-50%) scale(1);}
+    64%,100%{opacity:0;transform:translate(-50%,-50%) scale(.92);}
+  }
+  @keyframes preloader-cycle-3{
+    0%,70%{opacity:0;transform:translate(-50%,-50%) scale(.92);}
+    76%,91%{opacity:1;transform:translate(-50%,-50%) scale(1);}
+    97%,100%{opacity:0;transform:translate(-50%,-50%) scale(.92);}
   }
   @media (prefers-reduced-motion: reduce){
-    #preloader img{animation:none;}
+    .preloader-stage img{animation:none;opacity:1;transform:translate(-50%,-50%) scale(1);}
+    .preloader-stage img:not(:first-child){display:none;}
   }
   html{scroll-behavior:smooth;}
   body{
@@ -65,8 +92,10 @@
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
   }
+  html{touch-action:manipulation;}
   img{max-width:100%;display:block;}
-  a{color:inherit;text-decoration:none;}
+  a{color:inherit;text-decoration:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent;}
+  button,input,select,textarea{touch-action:manipulation;-webkit-tap-highlight-color:transparent;}
   ul{list-style:none;}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
   section{scroll-margin-top:90px;}
@@ -235,6 +264,9 @@
     animation-play-state:paused;
   }
   .bento-full:hover .bento-track{animation-play-state:running;}
+  @media (hover:none) and (pointer:coarse){
+    .bento-track{animation-play-state:running;}
+  }
   .bento-group{display:flex;gap:14px;padding:0 7px;flex-shrink:0;}
   @keyframes bento-scroll{
     from{transform:translateX(-50%);}
@@ -353,6 +385,7 @@
   .pbd-text .eyebrow{text-align:left;}
   .pbd-text .eyebrow::after{margin-left:0;}
   .pbd-form{
+    scroll-margin-top:110px;
     margin-top:28px;padding:26px;background:#fff;border-radius:var(--radius-lg);
     border:1px solid var(--border);display:flex;flex-direction:column;gap:16px;
   }
@@ -360,19 +393,37 @@
   .form-subtext{font-size:13.5px;color:var(--text-muted);margin-top:-6px;}
   .form-row{display:flex;flex-direction:column;gap:6px;}
   .form-row label{font-size:13px;font-weight:600;color:var(--text);}
+  .form-row label::after{content:" *";color:var(--copper);}
   .form-row input{
     padding:11px 14px;border:1.5px solid var(--border);border-radius:var(--radius);
     font-family:inherit;font-size:14px;color:var(--text);background:#fff;
-    transition:border-color .15s ease;
+    transition:border-color .15s ease, box-shadow .15s ease, background .15s ease;
   }
-  .form-row input:focus{outline:none;border-color:var(--navy);}
-  .form-question{border:none;padding:0;display:flex;flex-direction:column;gap:10px;}
+  .form-row input:hover{border-color:var(--slate);}
+  .form-row input:focus{
+    outline:none;border-color:var(--navy);
+    box-shadow:0 0 0 3px rgba(46,82,110,.14);
+  }
+  .form-question{border:none;padding:0;display:flex;flex-direction:column;gap:8px;}
   .form-question legend{font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:4px;padding:0;}
+  .form-question legend::after{content:" *";color:var(--copper);}
   .radio-option{
-    display:flex;align-items:flex-start;gap:9px;font-size:13.5px;color:var(--text-muted);
-    cursor:pointer;line-height:1.4;
+    display:flex;align-items:center;gap:10px;font-size:13.5px;color:var(--text-muted);
+    cursor:pointer;line-height:1.4;padding:9px 12px;border-radius:var(--radius);
+    border:1.5px solid var(--border);background:#fff;
+    transition:border-color .15s ease, background .15s ease, transform .12s ease;
   }
-  .radio-option input{margin-top:3px;accent-color:var(--navy);flex-shrink:0;}
+  .radio-option:hover{border-color:var(--navy);background:var(--cloud);}
+  .radio-option:active{transform:scale(.99);}
+  .radio-option:has(input:checked){
+    border-color:var(--navy);background:rgba(46,82,110,.06);
+    color:var(--text);font-weight:600;
+  }
+  .radio-option:has(input:focus-visible){outline:2px solid var(--navy);outline-offset:2px;}
+  .radio-option input{
+    margin:0;accent-color:var(--navy);flex-shrink:0;
+    width:16px;height:16px;cursor:pointer;
+  }
   .form-success{
     display:none;font-size:13.5px;color:var(--navy);font-weight:600;text-align:center;
   }
@@ -459,7 +510,11 @@
 <body>
 
 <div id="preloader">
-  <img src="Smarter_Aircraft_1st_Place.png" alt="Smarter Aircraft">
+  <div class="preloader-stage">
+    <img src="Smarter_Aircraft_1st_Place.png" alt="Smarter Aircraft">
+    <img src="BlueBird_Logo_Vertical_RGB1.png" alt="Bluebird">
+    <img src="VAULT26-Logo-Horizontal-White_1.svg" alt="Vault '26 Conference">
+  </div>
 </div>
 
 <!-- ===== HEADER ===== -->
@@ -480,7 +535,7 @@
       </a>
     </div>
     <div class="nav-right">
-      <a href="#" class="btn btn-white" style="padding:10px 22px;">Learn More</a>
+      <a href="#pbdForm" class="btn btn-white" style="padding:10px 22px;">Learn More</a>
     </div>
   </div>
 </header>
@@ -497,7 +552,7 @@
     <h1>The Official Sponsor of Vault '26</h1>
     <p>Private aviation brokerage and acquisitions, built on buyer-side strategy and disciplined ownership intelligence.</p>
     <div class="hero-meta"><span>Aug 31st – Sep 3rd, 2026</span> &nbsp;|&nbsp; MGM Grand, Las Vegas</div>
-    <a href="#" class="btn btn-white">Learn More</a>
+    <a href="#pbdForm" class="btn btn-white">Learn More</a>
   </div>
 </section>
 
@@ -903,7 +958,7 @@
   // Preloader
   window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
-    if (preloader) setTimeout(() => preloader.classList.add('loaded'), 1000);
+    if (preloader) setTimeout(() => preloader.classList.add('loaded'), 2800);
   });
 
   // Slow the hero background video way down
