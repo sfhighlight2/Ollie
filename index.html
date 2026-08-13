@@ -52,9 +52,12 @@
   #preloader{
     position:fixed;inset:0;z-index:9999;background:var(--charcoal,#23313B);
     display:flex;align-items:center;justify-content:center;
-    transition:opacity .5s ease, visibility .5s ease;
+    animation:preloader-hide .5s ease 2.75s forwards;
   }
-  #preloader.loaded{opacity:0;visibility:hidden;}
+  @keyframes preloader-hide{
+    from{opacity:1;visibility:visible;}
+    to{opacity:0;visibility:hidden;}
+  }
   .preloader-stage{position:relative;width:220px;height:130px;}
   .preloader-stage img{
     position:absolute;top:50%;left:50%;
@@ -62,9 +65,9 @@
     transform:translate(-50%,-50%) scale(.92);
     opacity:0;
   }
-  .preloader-stage img:nth-child(1){animation:preloader-cycle-1 2.7s ease-in-out infinite;}
-  .preloader-stage img:nth-child(2){animation:preloader-cycle-2 2.7s ease-in-out infinite;}
-  .preloader-stage img:nth-child(3){animation:preloader-cycle-3 2.7s ease-in-out infinite;}
+  .preloader-stage img:nth-child(1){animation:preloader-cycle-1 2.7s ease-in-out forwards;}
+  .preloader-stage img:nth-child(2){animation:preloader-cycle-2 2.7s ease-in-out forwards;}
+  .preloader-stage img:nth-child(3){animation:preloader-cycle-3 2.7s ease-in-out forwards;}
   @keyframes preloader-cycle-1{
     0%,4%{opacity:0;transform:translate(-50%,-50%) scale(.92);}
     10%,25%{opacity:1;transform:translate(-50%,-50%) scale(1);}
@@ -83,6 +86,7 @@
   @media (prefers-reduced-motion: reduce){
     .preloader-stage img{animation:none;opacity:1;transform:translate(-50%,-50%) scale(1);}
     .preloader-stage img:not(:first-child){display:none;}
+    #preloader{animation-delay:.6s;}
   }
   html{scroll-behavior:smooth;}
   body{
@@ -256,7 +260,7 @@
 
   /* ===== ABOUT ===== */
   .about{background:var(--bg-tint);padding:90px 0;}
-  .about-logo{height:64px;width:auto;margin:0 auto 22px;}
+  .section-logo{height:64px;width:auto;margin:0 auto 22px;}
   .about-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:center;margin-bottom:60px;}
   .bento-full{width:100%;margin-top:56px;overflow:hidden;}
   .bento-track{
@@ -274,7 +278,7 @@
     to{transform:translateX(0);}
   }
   .bento-item{
-    position:relative;border-radius:var(--radius-lg);overflow:hidden;
+    position:relative;border-radius:6px;overflow:hidden;
     border:none;padding:0;cursor:pointer;background:var(--hangar);
     flex:0 0 340px;aspect-ratio:4/3;
   }
@@ -430,7 +434,7 @@
   }
   .pbd-form.submitted .form-success{display:block;}
   .pbd-form.submitted .form-row,.pbd-form.submitted .form-question,.pbd-form.submitted button[type="submit"]{display:none;}
-  .pbd-text h2{margin-bottom:16px;}
+  .pbd-text h2{margin-bottom:16px;color:var(--navy);}
   .pbd-text p{color:var(--text-muted);font-size:14.5px;margin-bottom:14px;}
 
 
@@ -596,8 +600,7 @@
   <div class="wrap">
     <div class="about-grid">
       <div class="section-head" style="margin-bottom:0;">
-        <img src="logo2.png" alt="Smarter Aircraft" class="about-logo">
-        <span class="eyebrow">About The Vault Conference</span>
+        <img src="blk_vault.png" alt="Vault '26 Conference" class="section-logo">
         <h2>Pre-Vault Conference Event</h2>
         <p>As an official sponsor of the Vault Conference 2026 in Vegas, we had the honor of hosting our private jet event alongside PBD.</p>
       </div>
@@ -664,7 +667,7 @@
 <div class="bento-lightbox" id="bentoLightbox">
   <button class="bento-lightbox-close" id="bentoLightboxClose" aria-label="Close">&times;</button>
   <figure>
-    <img id="bentoLightboxImg" src="" alt="">
+    <img id="bentoLightboxImg" alt="">
     <video id="bentoLightboxVideo" autoplay muted loop playsinline></video>
   </figure>
 </div>
@@ -704,6 +707,7 @@
 <section class="why">
   <div class="wrap">
     <div class="section-head">
+      <img src="Smarter_Aircraft_1st_Place.png" alt="Smarter Aircraft" class="section-logo">
       <h2>We Do Not Sell Jets. We Protect Buyers.</h2>
       <p>Private aviation is complex. That's why we created our Private Jet Investment Guide just for you.</p>
     </div>
@@ -745,7 +749,7 @@
   </div>
   <div class="giveaway-overlay"></div>
   <div class="wrap giveaway-inner">
-    <span class="eyebrow">Giveaway</span>
+    <img src="BlueBird_Logo_Vertical_RGB1.png" alt="Bluebird" class="section-logo">
     <h2>Enter to Win the Vault Giveaway</h2>
     <p>Private aviation is complex. That's why we created our Private Jet Investor's Guide, built from a real acquisition case study, showing exactly how owners turn an aircraft into a $1-2M annual revenue asset.</p>
     <a href="#" class="btn btn-white">Pre-Register Today</a>
@@ -956,11 +960,6 @@
     setTimeout(closeExitPopup, 2200);
   });
 
-  // Preloader
-  window.addEventListener('load', () => {
-    const preloader = document.getElementById('preloader');
-    if (preloader) setTimeout(() => preloader.classList.add('loaded'), 2800);
-  });
 
   // Slow the hero background video way down
   const heroVideo = document.getElementById('heroVideo');
@@ -975,6 +974,14 @@
     giveawayVideo.playbackRate = 0.4;
     giveawayVideo.addEventListener('loadedmetadata', () => { giveawayVideo.playbackRate = 0.4; });
   }
+
+  // Bento: paint each tile's poster as a CSS background fallback so a tile
+  // never renders blank even if the device refuses to prepare the video element
+  document.querySelectorAll('.bento-item video[poster]').forEach(v => {
+    v.parentElement.style.backgroundImage = `url("${v.getAttribute('poster')}")`;
+    v.parentElement.style.backgroundSize = 'cover';
+    v.parentElement.style.backgroundPosition = 'center';
+  });
 
   // Bento gallery lightbox
   const lightbox = document.getElementById('bentoLightbox');
