@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vault Conference 2026 | Bet-David Consulting</title>
+<meta name="description" content="Private aviation brokerage and acquisitions, built on buyer-side strategy and disciplined ownership intelligence.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#2E526E;
+    --charcoal:#23313B;
+    --slate:#6F848E;
+    --cloud:#F7F8F9;
+    --hangar:#D9DEE2;
+    --copper:#A56A43;
+    --dark:#23313B;
+    --bg-tint:#F7F8F9;
+    --bg-blue:#D9DEE2;
+    --text:#1C2226;
+    --text-muted:#5b6670;
+    --white:#ffffff;
+    --border:#dde2e6;
+    --radius:8px;
+    --radius-lg:14px;
+    --max:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--text);
+    background:var(--white);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+  section{scroll-margin-top:90px;}
+  a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
+    outline:2px solid var(--navy);outline-offset:3px;border-radius:4px;
+  }
+  h1,h2{text-wrap:balance;}
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important;}
+  }
+  .eyebrow{
+    color:var(--slate);
+    font-weight:600;
+    font-size:12px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    text-align:center;
+    display:block;
+    margin-bottom:10px;
+  }
+  .eyebrow::after{
+    content:"";display:block;width:36px;height:2px;background:var(--copper);
+    margin:10px auto 0;
+  }
+  .eyebrow-left{text-align:left;}
+  .eyebrow-left::after{margin-left:0;}
+  h1,h2,h3,h4,h5{font-weight:800;letter-spacing:-.01em;}
+  h1,h2{font-size:clamp(30px,4.6vw,52px);line-height:1.08;}
+  .section-head{max-width:760px;margin:0 auto 46px;text-align:center;}
+  .section-head h2{margin-bottom:14px;color:var(--navy);}
+  .section-head p{color:var(--text-muted);font-size:16px;}
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:14px 30px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:14px;
+    letter-spacing:.02em;
+    cursor:pointer;
+    border:none;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    white-space:nowrap;
+  }
+  .btn-red{background:var(--navy);color:#fff;}
+  .btn-red:hover{background:var(--charcoal);transform:translateY(-1px);box-shadow:0 8px 20px rgba(46,82,110,.35);}
+  .btn-white{background:#fff;color:var(--navy);}
+  .btn-white:hover{background:var(--cloud);transform:translateY(-1px);box-shadow:0 8px 20px rgba(0,0,0,.25);}
+  .btn-dark{background:var(--dark);color:#fff;}
+  .btn-dark:hover{background:#000;transform:translateY(-1px);box-shadow:0 8px 20px rgba(13,13,13,.25);}
+  .btn-outline{background:transparent;color:var(--dark);border:1.5px solid var(--dark);}
+  .btn-outline:hover{background:var(--dark);color:#fff;transform:translateY(-1px);}
+  .btn:active{transform:translateY(0) scale(.97);}
+  .btn-block{width:100%;}
+
+  /* ===== HEADER ===== */
+  header{
+    position:sticky;top:0;z-index:200;
+    background:var(--dark);
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .nav{
+    max-width:var(--max);margin:0 auto;padding:14px 24px;
+    display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;
+  }
+  .logo-group{display:flex;align-items:center;justify-content:center;gap:26px;grid-column:2;}
+  .logo-divider{width:1px;height:34px;background:rgba(255,255,255,.18);flex-shrink:0;}
+  .logo img{height:52px;width:auto;display:block;}
+  .nav-right{display:flex;align-items:center;gap:18px;grid-column:3;justify-self:end;}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    min-height:790px;
+    display:flex;align-items:flex-end;
+    color:#fff;
+    overflow:hidden;
+    background:#0a0a0c;
+  }
+  .hero-video-bg{
+    position:absolute;inset:0;
+    width:100%;height:100%;
+    overflow:hidden;
+    z-index:0;
+  }
+  .hero-video-bg video{
+    position:absolute;inset:0;
+    width:100%;height:100%;
+    object-fit:cover;
+    pointer-events:none;
+  }
+  .hero-overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(10,10,12,.35) 0%, rgba(8,8,10,.55) 55%, rgba(6,6,8,.88) 100%);
+    z-index:1;
+  }
+  .hero-inner{position:relative;z-index:2;padding:80px 24px 60px;max-width:var(--max);margin:0 auto;width:100%;}
+  .hero-inner h1{
+    font-size:clamp(30px,4.6vw,52px);
+    max-width:680px;
+    margin-bottom:16px;
+    line-height:1.08;
+  }
+  .hero-inner p{max-width:560px;color:#e7e7e7;font-size:16px;margin-bottom:18px;}
+  .hero-meta{font-size:14px;font-weight:700;margin-bottom:26px;color:#fff;}
+  .hero-meta span{color:var(--copper);}
+
+  /* ===== LOGO MARQUEE ===== */
+  .marquee{
+    background:var(--cloud);
+    border-bottom:1px solid var(--border);
+    overflow:hidden;
+    padding:34px 0;
+  }
+  .marquee-track{
+    display:flex;
+    width:max-content;
+    animation:marquee-scroll 70s linear infinite;
+  }
+  .marquee-group{
+    display:flex;
+    align-items:center;
+    gap:70px;
+    padding-right:70px;
+    flex-shrink:0;
+  }
+  .marquee-group img{
+    height:44px;width:auto;object-fit:contain;
+    filter:grayscale(100%);opacity:.55;
+  }
+  @keyframes marquee-scroll{
+    from{transform:translateX(0);}
+    to{transform:translateX(-25%);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .marquee-track{animation:none;}
+  }
+
+  /* ===== ABOUT ===== */
+  .about{background:var(--bg-tint);padding:90px 0;}
+  .about-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:center;margin-bottom:60px;}
+  .bento-full{width:100%;margin-top:56px;padding:0 24px;}
+  .bento-grid{
+    max-width:1600px;margin:0 auto;
+    display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:180px;
+    grid-auto-flow:dense;gap:14px;
+  }
+  .bento-item{
+    position:relative;border-radius:var(--radius-lg);overflow:hidden;
+    border:none;padding:0;cursor:pointer;background:var(--hangar);
+    grid-column:span 1;grid-row:span 1;
+  }
+  .bento-item.span-2x2{grid-column:span 2;grid-row:span 2;}
+  .bento-item.span-2x1{grid-column:span 2;grid-row:span 1;}
+  .bento-item.span-1x2{grid-column:span 1;grid-row:span 2;}
+  .bento-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
+  .bento-item:hover img{transform:scale(1.06);}
+  .bento-overlay{
+    position:absolute;left:0;right:0;bottom:0;padding:16px;text-align:left;
+    background:linear-gradient(180deg,transparent,rgba(35,49,59,.9));
+    color:#fff;display:flex;flex-direction:column;gap:2px;
+    opacity:0;transition:opacity .25s ease;
+  }
+  .bento-item:hover .bento-overlay,.bento-item:focus-visible .bento-overlay{opacity:1;}
+  .bento-overlay strong{font-size:15px;}
+  .bento-overlay small{font-size:12.5px;color:#dbe1e6;}
+
+  .bento-lightbox{
+    position:fixed;inset:0;z-index:500;background:rgba(20,26,31,.92);
+    display:none;align-items:center;justify-content:center;padding:40px;
+  }
+  .bento-lightbox.open{display:flex;}
+  .bento-lightbox figure{max-width:min(1100px,90vw);max-height:85vh;margin:0;}
+  .bento-lightbox img{width:100%;max-height:70vh;object-fit:contain;border-radius:10px;display:block;}
+  .bento-lightbox figcaption{color:#fff;margin-top:14px;display:flex;flex-direction:column;gap:4px;}
+  .bento-lightbox figcaption strong{font-size:18px;}
+  .bento-lightbox figcaption span{font-size:14px;color:#c7cdd2;}
+  .bento-lightbox-close{
+    position:absolute;top:22px;right:26px;width:42px;height:42px;border-radius:50%;
+    background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;
+    font-size:24px;line-height:1;cursor:pointer;
+  }
+  .bento-lightbox-close:hover{background:rgba(255,255,255,.2);}
+
+
+  /* ===== WHY VAULT ===== */
+  .why{
+    background:linear-gradient(90deg, rgba(35,49,59,.82), rgba(35,49,59,.93)), url('bg1.png') center/cover no-repeat;
+    padding:90px 0;
+  }
+  .why .eyebrow{color:var(--copper);}
+  .why .section-head h2{color:#fff;}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .why-item{
+    padding:28px 26px;border-radius:var(--radius-lg);
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.12);
+    backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+    transition:transform .2s ease, background .2s ease, border-color .2s ease;
+  }
+  .why-item:hover{
+    transform:translateY(-4px);
+    background:rgba(255,255,255,.1);
+    border-color:rgba(165,106,67,.5);
+  }
+  .why-icon{
+    width:46px;height:46px;border-radius:10px;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(165,106,67,.14);
+    border:1px solid rgba(165,106,67,.35);
+    color:var(--copper);
+    margin-bottom:18px;
+  }
+  .why-icon svg{width:23px;height:23px;}
+  .why-item h4{font-size:15.5px;margin-bottom:8px;color:#fff;}
+  .why-item p{font-size:13.5px;color:#B7C2D6;line-height:1.6;}
+  @media (prefers-reduced-motion: reduce){
+    .why-item{transition:none;}
+  }
+
+
+
+  /* ===== TESTIMONIALS ===== */
+  .testi{background:var(--bg-blue);padding:90px 0;}
+  .testi-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:34px;flex-wrap:wrap;gap:20px;}
+  .testi-head h2{max-width:520px;}
+  .testi-nav{display:flex;gap:10px;}
+  .testi-nav button{
+    width:38px;height:38px;border-radius:50%;border:1.5px solid var(--dark);
+    background:#fff;cursor:pointer;font-size:16px;
+  }
+  .testi-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;}
+  .testi-track::-webkit-scrollbar{height:6px;}
+  .testi-track::-webkit-scrollbar-thumb{background:rgba(0,0,0,.2);border-radius:10px;}
+  .testi-card{
+    flex:0 0 260px;scroll-snap-align:start;background:#fff;border-radius:var(--radius-lg);
+    overflow:hidden;box-shadow:0 14px 28px -18px rgba(11,30,61,.35);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .testi-card:hover{transform:translateY(-4px);box-shadow:0 20px 34px -18px rgba(11,30,61,.45);}
+  .testi-card img{width:100%;aspect-ratio:4/5;object-fit:cover;}
+  .testi-body{padding:16px;}
+  .testi-body h5{font-size:13.5px;margin-bottom:6px;}
+  .testi-body p{font-size:12.5px;color:var(--text-muted);font-style:italic;}
+
+
+  /* ===== PBD BIO ===== */
+  .pbd{background:var(--bg-blue);padding:0;}
+  .pbd-grid{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;}
+  .pbd-grid img{width:100%;height:100%;object-fit:cover;min-height:380px;}
+  .pbd-text{padding:70px 60px;display:flex;flex-direction:column;justify-content:center;}
+  .pbd-text .eyebrow{text-align:left;}
+  .pbd-text .eyebrow::after{margin-left:0;}
+  .pbd-text h2{margin-bottom:16px;}
+  .pbd-text p{color:var(--text-muted);font-size:14.5px;margin-bottom:14px;}
+
+  /* ===== EXPERIENCE GALLERY ===== */
+  .experience{background:#fff;padding:90px 0;}
+  .exp-grid{
+    display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:130px;gap:12px;
+  }
+  .exp-grid img{width:100%;height:100%;object-fit:cover;border-radius:10px;}
+  .exp-grid .span2{grid-column:span 2;}
+  .exp-grid .row2{grid-row:span 2;}
+
+  /* ===== SPONSORS ===== */
+  .sponsors{background:#fff;padding:90px 0;text-align:center;}
+  .sponsor-tier{margin-bottom:44px;}
+  .sponsor-tier h5{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:20px;}
+  .sponsor-logos{display:flex;justify-content:center;align-items:center;gap:50px;flex-wrap:wrap;}
+  .sponsor-logos img{height:38px;width:auto;object-fit:contain;filter:grayscale(20%);}
+  .sponsor-logos.big img{height:46px;}
+
+  /* ===== HOTEL ===== */
+  .hotel{background:var(--bg-blue);}
+  .hotel-grid{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;}
+  .hotel-grid img{width:100%;height:100%;object-fit:cover;min-height:340px;}
+  .hotel-text{padding:70px 60px;display:flex;flex-direction:column;justify-content:center;}
+  .hotel-text .eyebrow{text-align:left;}
+  .hotel-text .eyebrow::after{margin-left:0;}
+  .hotel-text h2{margin-bottom:16px;}
+  .hotel-text p{color:var(--text-muted);font-size:14.5px;margin-bottom:22px;}
+
+  /* ===== FAQ ===== */
+  .faq{background:#fff;padding:90px 0;}
+  .faq-grid{display:grid;grid-template-columns:220px 1fr;gap:50px;}
+  .faq-item{border-bottom:1px solid var(--border);}
+  .faq-q{
+    width:100%;text-align:left;background:none;border:none;padding:18px 0;
+    font-weight:700;font-size:15px;cursor:pointer;
+    display:flex;justify-content:space-between;align-items:center;color:var(--text);
+  }
+  .faq-q::after{content:"+";font-size:20px;color:var(--navy);transition:transform .2s ease;font-weight:400;}
+  .faq-item.open .faq-q::after{content:"–";}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;}
+  .faq-a p{color:var(--text-muted);font-size:13.5px;padding-bottom:18px;max-width:760px;}
+
+  /* ===== FOOTER CTA ===== */
+  .footer-cta{
+    position:relative;padding:120px 24px;text-align:center;color:#fff;
+    background:linear-gradient(180deg, rgba(6,6,8,.55), rgba(6,6,8,.85)),
+      url('https://vault.betdavidconsulting.com/cdn/shop/files/background_image_4.jpg?v=1769689737') center/cover no-repeat;
+  }
+  .footer-cta h2{max-width:720px;margin:0 auto 30px;}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--dark);color:#d8d8d8;padding:70px 0 30px;}
+  .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:50px;}
+  .footer-top img{height:48px;margin-bottom:18px;}
+  .footer-top p{font-size:13.5px;color:#9a9a9a;max-width:340px;margin-bottom:16px;}
+  .foot-tag{display:inline-block;font-size:11px;font-weight:700;color:var(--copper);border:1px solid rgba(165,106,67,.4);padding:4px 10px;border-radius:999px;}
+  footer h5{color:#fff;font-size:13px;margin-bottom:16px;text-transform:uppercase;letter-spacing:.05em;}
+  footer .flinks li{margin-bottom:10px;}
+  footer .flinks a{font-size:13.5px;color:#b8b8b8;transition:color .15s ease;}
+  footer .flinks a:hover{color:#fff;}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,.1);padding-top:24px;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
+  }
+  .footer-bottom .legal{display:flex;gap:20px;flex-wrap:wrap;font-size:12.5px;color:#9a9a9a;}
+  .footer-bottom .legal a:hover{color:#fff;}
+  .socials{display:flex;gap:14px;}
+  .socials a{
+    width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.2);
+    display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width:1024px){
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .exp-grid{grid-template-columns:repeat(4,1fr);}
+    .pbd-grid,.hotel-grid{grid-template-columns:1fr;}
+    .pbd-text,.hotel-text{padding:50px 30px;}
+    .faq-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:720px){
+    .nav{grid-template-columns:1fr;justify-items:center;gap:14px;padding:16px 20px;}
+    .logo-group{grid-column:1;flex-wrap:wrap;justify-content:center;gap:16px;}
+    .logo img{height:38px;}
+    .nav-right{grid-column:1;justify-self:center;}
+    .why-grid{grid-template-columns:1fr;}
+    .exp-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:110px;}
+    .sponsor-logos{gap:26px;}
+    .about,.why,.testi,.experience,.sponsors,.faq{padding:60px 0;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="nav">
+    <div></div>
+    <div class="logo-group">
+      <a href="#" class="logo">
+        <img src="Smarter_Aircraft_1st_Place.png" alt="Smarter Aircraft - Business Jet Transactions">
+      </a>
+      <span class="logo-divider"></span>
+      <a href="#" class="logo">
+        <img src="BlueBird_Logo_Vertical_RGB1.png" alt="BlueBird">
+      </a>
+      <span class="logo-divider"></span>
+      <a href="#" class="logo">
+        <img src="VAULT26-Logo-Horizontal-White_1.svg" alt="Vault '26 Conference">
+      </a>
+    </div>
+    <div class="nav-right">
+      <a href="#" class="btn btn-white" style="padding:10px 22px;">Get Tickets</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-video-bg">
+    <video id="heroVideo" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+      <source src="vid1-web.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <h1>The Official Sponsor of Vault '26</h1>
+    <p>Private aviation brokerage and acquisitions, built on buyer-side strategy and disciplined ownership intelligence.</p>
+    <div class="hero-meta"><span>Aug 31st – Sep 3rd, 2026</span> &nbsp;|&nbsp; MGM Grand, Las Vegas</div>
+    <a href="#" class="btn btn-white">Learn More</a>
+  </div>
+</section>
+
+<!-- ===== LOGO MARQUEE ===== -->
+<section class="marquee">
+  <div class="marquee-track">
+    <div class="marquee-group">
+      <img src="Logo/assoc-47g.png" alt="47G">
+      <img src="Logo/assoc-avbuyer.png" alt="AvBuyer">
+      <img src="Logo/assoc-conklin.png" alt="Conklin & de Decker">
+      <img src="Logo/assoc-uba.png" alt="Utah Business Aviation Association">
+      <img src="Logo/assoc-uada.png" alt="Utah Aerospace & Defense Association">
+    </div>
+    <div class="marquee-group" aria-hidden="true">
+      <img src="Logo/assoc-47g.png" alt="">
+      <img src="Logo/assoc-avbuyer.png" alt="">
+      <img src="Logo/assoc-conklin.png" alt="">
+      <img src="Logo/assoc-uba.png" alt="">
+      <img src="Logo/assoc-uada.png" alt="">
+    </div>
+    <div class="marquee-group" aria-hidden="true">
+      <img src="Logo/assoc-47g.png" alt="">
+      <img src="Logo/assoc-avbuyer.png" alt="">
+      <img src="Logo/assoc-conklin.png" alt="">
+      <img src="Logo/assoc-uba.png" alt="">
+      <img src="Logo/assoc-uada.png" alt="">
+    </div>
+    <div class="marquee-group" aria-hidden="true">
+      <img src="Logo/assoc-47g.png" alt="">
+      <img src="Logo/assoc-avbuyer.png" alt="">
+      <img src="Logo/assoc-conklin.png" alt="">
+      <img src="Logo/assoc-uba.png" alt="">
+      <img src="Logo/assoc-uada.png" alt="">
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="section-head" style="margin-bottom:0;">
+        <span class="eyebrow">About The Vault Conference</span>
+        <h2>Pre-Vault Conference Event</h2>
+        <p>Learn directly from Patrick Bet-David's 20 years building companies and the principles behind sustained success: strategy, faith, family, and legacy wealth.</p>
+      </div>
+    </div>
+  </div>
+  <div class="bento-full">
+    <div class="bento-grid">
+      <button class="bento-item span-2x2" data-title="Mountain Vista" data-desc="Serenity above the clouds.">
+        <img src="https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=800&q=80" alt="Mountain Vista">
+        <span class="bento-overlay"><strong>Mountain Vista</strong><small>Serenity above the clouds.</small></span>
+      </button>
+      <button class="bento-item" data-title="Coastal Arch" data-desc="Where the land meets the sea.">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80" alt="Coastal Arch">
+        <span class="bento-overlay"><strong>Coastal Arch</strong><small>Where the land meets the sea.</small></span>
+      </button>
+      <button class="bento-item" data-title="Forest Canopy" data-desc="Sunlight filtering through leaves.">
+        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80" alt="Forest Canopy">
+        <span class="bento-overlay"><strong>Forest Canopy</strong><small>Sunlight filtering through leaves.</small></span>
+      </button>
+      <button class="bento-item span-1x2" data-title="Desert Dunes" data-desc="Golden sands under the sun.">
+        <img src="https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?w=800&q=80" alt="Desert Dunes">
+        <span class="bento-overlay"><strong>Desert Dunes</strong><small>Golden sands under the sun.</small></span>
+      </button>
+      <button class="bento-item" data-title="City at Night" data-desc="A vibrant urban landscape.">
+        <img src="https://images.unsplash.com/photo-1506606401543-2e73709cebb4?w=800&q=80" alt="City at Night">
+        <span class="bento-overlay"><strong>City at Night</strong><small>A vibrant urban landscape.</small></span>
+      </button>
+      <button class="bento-item span-2x1" data-title="Misty Lake" data-desc="Morning fog over calm waters.">
+        <img src="https://images.unsplash.com/photo-1634023233766-0c16b151bfb0?w=800&q=80" alt="Misty Lake">
+        <span class="bento-overlay"><strong>Misty Lake</strong><small>Morning fog over calm waters.</small></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<div class="bento-lightbox" id="bentoLightbox">
+  <button class="bento-lightbox-close" id="bentoLightboxClose" aria-label="Close">&times;</button>
+  <figure>
+    <img id="bentoLightboxImg" src="" alt="">
+    <figcaption>
+      <strong id="bentoLightboxTitle"></strong>
+      <span id="bentoLightboxDesc"></span>
+    </figcaption>
+  </figure>
+</div>
+
+<!-- ===== WHY VAULT ===== -->
+<section class="why">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Why Serious Entrepreneurs Keep Coming Back To Vault</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Z"/><path d="M19 11a7 7 0 0 1-14 0"/><path d="M12 18v3"/><path d="M9 21h6"/></svg></div>
+        <h4>Learn Directly From Patrick Bet-David</h4>
+        <p>Get raw, unfiltered insight from someone who's scaled from startup to a 9-figure exit, and who teaches what most won't.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m14.5 9.5-2 5-5 2 2-5 5-2Z"/></svg></div>
+        <h4>Clarity on Your Next Strategic Move</h4>
+        <p>Get crystal-clear direction on where your business should go, and how to get there fast.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg></div>
+        <h4>Solve Big Problems That Impact Valuation</h4>
+        <p>Whether it's hiring, funding, scaling, or exiting, Vault speakers bring practical, stage-relevant solutions.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8" r="3"/><path d="M2.5 19c.5-3 2.9-5 6-5s5.5 2 6 5"/><path d="M17 8.2a2.7 2.7 0 1 0 0-5.4"/><path d="M15.5 14c2.3.4 4 2.1 4.5 5"/></svg></div>
+        <h4>Get in the Right Room With the Right People</h4>
+        <p>Conversations here lead to partnerships, capital, and clarity, because your next move might be one connection away.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 19.5c.6-3.2 3-5 6.5-5s5.9 1.8 6.5 5"/><path d="M19 8v5"/><path d="M16.5 10.5h5"/></svg></div>
+        <h4>Hire, Lead, and Build the Right Team</h4>
+        <p>From your first hires to leadership succession, learn how to attract, develop, and align top talent.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3"/><path d="M12 19v3"/><path d="m4.2 4.2 2.1 2.1"/><path d="m17.7 17.7 2.1 2.1"/><path d="M2 12h3"/><path d="M19 12h3"/><path d="m4.2 19.8 2.1-2.1"/><path d="m17.7 6.3 2.1-2.1"/><circle cx="12" cy="12" r="4"/></svg></div>
+        <h4>Get Unstuck and Reignite Your Vision</h4>
+        <p>Every founder hits a wall, what you need is the mindset, model, and mission to break through it. That's what Vault delivers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testi">
+  <div class="wrap">
+    <div class="testi-head">
+      <div>
+        <span class="eyebrow eyebrow-left">Testimonials</span>
+        <h2>They Came To Vault. They Built. They Returned. Hear Why.</h2>
+      </div>
+      <div class="testi-nav">
+        <button id="testiPrev">←</button>
+        <button id="testiNext">→</button>
+      </div>
+    </div>
+    <div class="testi-track" id="testiTrack">
+      <div class="testi-card"><img src="https://vault.betdavidconsulting.com/cdn/shop/files/T3_b7e79282-fdc0-46c2-9abb-8a599f080a46.jpg?v=1782215479" alt=""><div class="testi-body"><h5>MANN + MYERS Realty Group</h5><p>"Last year we were lost as a company. Now we have a mission, we have a purpose and we have doubled our growth."</p></div></div>
+      <div class="testi-card"><img src="https://vault.betdavidconsulting.com/cdn/shop/files/T4_d9066765-e10b-487d-a0f0-6ad28afd241c.jpg?v=1782215479" alt=""><div class="testi-body"><h5>Mark Popach</h5><p>"It's who you become when you go to the Vault, not what you get out of it."</p></div></div>
+      <div class="testi-card"><img src="https://vault.betdavidconsulting.com/cdn/shop/files/T2_c529f845-d5d4-4f27-9fe8-c17dc35e5acf.jpg?v=1782215479" alt=""><div class="testi-body"><h5>Sam Hatch</h5><p>"I came here to learn more about growth, development, and the gaps holding me back."</p></div></div>
+      <div class="testi-card"><img src="https://vault.betdavidconsulting.com/cdn/shop/files/T5_d963db2a-06d4-4276-b40a-7bf3d36f42cd.jpg?v=1782215479" alt=""><div class="testi-body"><h5>Jamison Damolaris & Kylie Pucel</h5><p>"We're here to be inspired and recharged and motivated. Buy the ticket, invest in yourself."</p></div></div>
+      <div class="testi-card"><img src="https://vault.betdavidconsulting.com/cdn/shop/files/T1_f4d81555-6ba0-4827-b3bb-8f988d2e2e95.jpg?v=1782215479" alt=""><div class="testi-body"><h5>Jordan R</h5><p>"I'm here to develop more mindset, tactics and strategies, learn how to grow beyond some of the limitations."</p></div></div>
+      <div class="testi-card"><img src="https://vault.betdavidconsulting.com/cdn/shop/files/Testimonials_R-2_4.png?v=1769725647" alt=""><div class="testi-body"><h5>Bradley Hannon</h5><p>"There's no conference that I've been to that is truly operator, business-focused like this event."</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PATRICK BET-DAVID ===== -->
+<section class="pbd">
+  <div class="pbd-grid">
+    <img src="https://vault.betdavidconsulting.com/cdn/shop/files/Image_6.jpg?v=1769688360" alt="Patrick Bet-David">
+    <div class="pbd-text">
+      <span class="eyebrow">Patrick Bet-David</span>
+      <h2>Meet the Man Behind the Vault</h2>
+      <p>Patrick Bet-David is one of the most dynamic business minds of this generation. He's built and sold companies, created iconic content that's influenced millions, and continues to lead at the intersection of strategy, leadership, and media.</p>
+      <p>From PHP Agency to Valuetainment, from the PBD Podcast to Bet-David Consulting, everything Patrick builds has one mission: help entrepreneurs think better, move smarter, and win bigger. His platforms reach millions, but his focus is singular: real growth, for real business builders.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPERIENCE GALLERY ===== -->
+<section class="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The Vault Experience</span>
+      <h2>A Room Filled With Founders Across Industries</h2>
+      <p>From the main stage to closed-door moments, this is what access inside The Vault looks like.</p>
+    </div>
+    <div class="exp-grid">
+      <img class="row2 span2" src="https://vault.betdavidconsulting.com/cdn/shop/files/Mask_group.png?v=1769689544" alt="">
+      <img src="https://vault.betdavidconsulting.com/cdn/shop/files/Mask_group-2.png?v=1769689543" alt="">
+      <img src="https://vault.betdavidconsulting.com/cdn/shop/files/Mask_group-3.png?v=1769689543" alt="">
+      <img src="https://vault.betdavidconsulting.com/cdn/shop/files/Mask_group-4.png?v=1769689544" alt="">
+      <img class="row2" src="https://vault.betdavidconsulting.com/cdn/shop/files/Mask_group-5.png?v=1769689543" alt="">
+      <img src="https://vault.betdavidconsulting.com/cdn/shop/files/Mask_group-6.png?v=1769689544" alt="">
+      <img src="https://vault.betdavidconsulting.com/cdn/shop/files/Mask_group-7.png?v=1769689544" alt="">
+      <img class="span2" src="https://vault.betdavidconsulting.com/cdn/shop/files/Mask_group-8.png?v=1769689544" alt="">
+      <img src="https://vault.betdavidconsulting.com/cdn/shop/files/Mask_group_3.jpg?v=1769807174" alt="">
+    </div>
+  </div>
+</section>
+
+<!-- ===== SPONSORS ===== -->
+<section class="sponsors" id="sponsors">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Sponsors</span>
+      <h2>Meet Brands That Are Powering Big Ideas For Your Business</h2>
+      <p>Our sponsors aren't just here to support the event. They're your next business advantage. Connect with brands bringing tools and strategies that create real results.</p>
+    </div>
+    <div class="sponsor-tier">
+      <h5>Platinum Sponsors</h5>
+      <div class="sponsor-logos big"><img src="https://vault.betdavidconsulting.com/cdn/shop/files/kalshi-logo-black-Platinum_1.png?v=1773924455" alt="Kalshi"></div>
+    </div>
+    <div class="sponsor-tier">
+      <h5>Gold Sponsors</h5>
+      <div class="sponsor-logos">
+        <img src="https://vault.betdavidconsulting.com/cdn/shop/files/image_80.png?v=1773924455" alt="The DUA Brand">
+        <img src="https://vault.betdavidconsulting.com/cdn/shop/files/Untitled_design_5.png?v=1782141343" alt="Ignite Health">
+      </div>
+    </div>
+    <div class="sponsor-tier">
+      <h5>Silver Sponsors</h5>
+      <div class="sponsor-logos">
+        <img src="https://vault.betdavidconsulting.com/cdn/shop/files/image_81.png?v=1773924454" alt="Quest">
+        <img src="https://vault.betdavidconsulting.com/cdn/shop/files/1.png?v=1782140862" alt="Bourbon Beef">
+        <img src="https://vault.betdavidconsulting.com/cdn/shop/files/2.png?v=1782140862" alt="Sirius Sports Auctions">
+        <img src="https://vault.betdavidconsulting.com/cdn/shop/files/3.png?v=1782140862" alt="Inkeros">
+      </div>
+    </div>
+    <p style="margin:30px 0 18px;font-weight:700;">Ready to put your brand in front of the leaders building what's next? Find out if you qualify.</p>
+    <a href="#" class="btn btn-red">Explore Sponsorship Opportunities</a>
+  </div>
+</section>
+
+<!-- ===== HOTEL ===== -->
+<section class="hotel">
+  <div class="hotel-grid">
+    <img src="https://vault.betdavidconsulting.com/cdn/shop/files/Image_11.jpg?v=1769689641" alt="MGM Grand">
+    <div class="hotel-text">
+      <span class="eyebrow">Hotel</span>
+      <h2>Stay at the MGM Grand. Your Home Base for The Vault.</h2>
+      <p>Skip the commute and stay in the center of it all. Instant access to sessions, speakers, world-class dining, and the networking that happens between the official agenda.</p>
+      <a href="https://book.passkey.com/event/51095726/owner/3623455/home" class="btn btn-red" style="width:fit-content;">Reserve Hotel</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq">
+  <div class="wrap">
+    <div class="faq-grid">
+      <div>
+        <span class="eyebrow eyebrow-left">Frequently Asked Questions</span>
+        <h2>FAQs</h2>
+      </div>
+      <div id="faqList">
+        <div class="faq-item">
+          <button class="faq-q">When and where is The Vault Conference 2026?</button>
+          <div class="faq-a"><p>August 31 to September 3, 2026, at the MGM Grand in Las Vegas, Nevada.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Who is The Vault for?</button>
+          <div class="faq-a"><p>The Vault is for founders, CEOs, and decision-makers who are serious about scaling their business. It serves leaders past the early stages who want clarity, confidence, and stronger execution in their decisions. Whether you are pushing toward your first million or leading a multi-eight-figure organization, The Vault is designed for entrepreneurs who want direction, not motivation.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Why attend The Vault instead of other business events?</button>
+          <div class="faq-a"><p>Most business events focus on inspiration. The Vault is built for execution — a 4-day working session with play-by-play guidance built by Patrick Bet-David and used by over 20,000 entrepreneurs to scale, systemize, and sharpen their businesses.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Will I be able to network with other entrepreneurs?</button>
+          <div class="faq-a"><p>Yes. Networking is a core part of The Vault experience, from curated conversations to private dinners and moments outside the main sessions.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What is the dress code?</button>
+          <div class="faq-a"><p>Business or business formal. The Vault attracts high-level entrepreneurs and executives, so come dressed to match the caliber of the room.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Are there any group rates available?</button>
+          <div class="faq-a"><p>Yes. Group ticket options are available for teams and organizations at special rates.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What is the refund or cancellation policy?</button>
+          <div class="faq-a"><p>All ticket sales are final. Refunds are not offered, however tickets are transferable if you are unable to attend.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Who can I contact if I have additional questions or need support?</button>
+          <div class="faq-a"><p>Please reach out to our team at events@vt.com. We're here to help and will get back to you as soon as possible.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER CTA ===== -->
+<section class="footer-cta">
+  <h2>One Event. Four Days. The Intersection of Strategy, Leadership, & Life.</h2>
+  <a href="#" class="btn btn-white">Secure Your Ticket</a>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <img src="Smarter_Aircraft_1st_Place.png" alt="Smarter Aircraft - Business Jet Transactions">
+        <p>Hosted by Patrick Bet-David, this 4-day experience brings together 12,000+ founders and CEOs, to master strategy, leadership, and growth. If you are ready to build the systems required to lead in business and life, this is your next move.</p>
+        <span class="foot-tag">Vault 2025</span>
+      </div>
+      <div>
+        <h5>Vault 2026</h5>
+        <ul class="flinks">
+          <li><a href="#about">About</a></li>
+          <li><a href="#">Tickets</a></li>
+          <li><a href="#">Agenda</a></li>
+          <li><a href="#sponsors">Sponsorships</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Quick Links</h5>
+        <ul class="flinks">
+          <li><a href="https://www.betdavidconsulting.com/" target="_blank" rel="noopener">Bet-David Consulting</a></li>
+          <li><a href="https://valuetainment.com/" target="_blank" rel="noopener">Valuetainment</a></li>
+          <li><a href="https://www.minnect.com/" target="_blank" rel="noopener">Minnect</a></li>
+          <li><a href="https://www.youtube.com/@PBDPodcast" target="_blank" rel="noopener">PBD Podcast</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="legal">
+        <span>© Bet-David Consulting — 2026</span>
+        <a href="#">Privacy Policy</a>
+        <a href="#">T&amp;C</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <div class="socials">
+        <a href="https://www.instagram.com/betdavidconsulting/" target="_blank" rel="noopener">IG</a>
+        <a href="https://www.facebook.com/profile.php?id=61554259991903" target="_blank" rel="noopener">FB</a>
+        <a href="https://www.linkedin.com/company/bet-david-consulting/" target="_blank" rel="noopener">LI</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Slow the hero background video way down
+  const heroVideo = document.getElementById('heroVideo');
+  if (heroVideo) {
+    heroVideo.playbackRate = 0.35;
+    heroVideo.addEventListener('loadedmetadata', () => { heroVideo.playbackRate = 0.35; });
+  }
+
+  // Bento gallery lightbox
+  const lightbox = document.getElementById('bentoLightbox');
+  const lightboxImg = document.getElementById('bentoLightboxImg');
+  const lightboxTitle = document.getElementById('bentoLightboxTitle');
+  const lightboxDesc = document.getElementById('bentoLightboxDesc');
+  const lightboxClose = document.getElementById('bentoLightboxClose');
+  let bentoLastFocused = null;
+
+  function openBentoLightbox(item) {
+    const img = item.querySelector('img');
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightboxTitle.textContent = item.dataset.title || '';
+    lightboxDesc.textContent = item.dataset.desc || '';
+    bentoLastFocused = item;
+    lightbox.classList.add('open');
+    lightboxClose.focus();
+  }
+  function closeBentoLightbox() {
+    lightbox.classList.remove('open');
+    if (bentoLastFocused) bentoLastFocused.focus();
+  }
+  document.querySelectorAll('.bento-item').forEach(item => {
+    item.addEventListener('click', () => openBentoLightbox(item));
+  });
+  lightboxClose.addEventListener('click', closeBentoLightbox);
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeBentoLightbox(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && lightbox.classList.contains('open')) closeBentoLightbox(); });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // Testimonials carousel
+  const track = document.getElementById('testiTrack');
+  document.getElementById('testiNext').addEventListener('click', () => track.scrollBy({left: 280, behavior:'smooth'}));
+  document.getElementById('testiPrev').addEventListener('click', () => track.scrollBy({left: -280, behavior:'smooth'}));
+</script>
+
+</body>
+</html>
