@@ -285,6 +285,15 @@
   .bento-item video{z-index:2;opacity:0;}
   .bento-item video.playing,.bento-item:hover video{opacity:1;}
   .bento-item:hover img,.bento-item:hover video{transform:scale(1.06);}
+  .bento-play-icon{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:3;
+    width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.9);
+    display:flex;align-items:center;justify-content:center;
+    transition:background .3s ease, transform .3s ease;
+    pointer-events:none;
+  }
+  .bento-item:hover .bento-play-icon{background:rgba(255,255,255,1);transform:translate(-50%,-50%) scale(1.1);}
+  .bento-play-icon svg{width:24px;height:24px;fill:var(--navy);margin-left:3px;}
 
   .bento-lightbox{
     position:fixed;inset:0;z-index:500;background:rgba(20,26,31,.92);
@@ -611,30 +620,37 @@
       <div class="bento-group">
         <button class="bento-item" data-type="video" data-src="vids/web/DJI_20260729_180042_944_video-web.mp4">
           <img src="vids/web/posters/DJI_20260729_180042_944_video-web.jpg" alt="" class="bento-poster">
+          <div class="bento-play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           <video src="vids/web/DJI_20260729_180042_944_video-web.mp4#t=0.1" poster="vids/web/posters/DJI_20260729_180042_944_video-web.jpg" muted loop playsinline preload="none"></video>
         </button>
         <button class="bento-item" data-type="video" data-src="vids/web/DJI_20260729_190148_512_video-web.mp4">
           <img src="vids/web/posters/DJI_20260729_190148_512_video-web.jpg" alt="" class="bento-poster">
+          <div class="bento-play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           <video src="vids/web/DJI_20260729_190148_512_video-web.mp4#t=0.1" poster="vids/web/posters/DJI_20260729_190148_512_video-web.jpg" muted loop playsinline preload="none"></video>
         </button>
         <button class="bento-item" data-type="video" data-src="vids/web/DJI_20260729_201539_168_video_2-web.mp4">
           <img src="vids/web/posters/DJI_20260729_201539_168_video_2-web.jpg" alt="" class="bento-poster">
+          <div class="bento-play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           <video src="vids/web/DJI_20260729_201539_168_video_2-web.mp4#t=0.1" poster="vids/web/posters/DJI_20260729_201539_168_video_2-web.jpg" muted loop playsinline preload="none"></video>
         </button>
         <button class="bento-item" data-type="video" data-src="vids/web/DJI_20260729_202639_875_video_2-web.mp4">
           <img src="vids/web/posters/DJI_20260729_202639_875_video_2-web.jpg" alt="" class="bento-poster">
+          <div class="bento-play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           <video src="vids/web/DJI_20260729_202639_875_video_2-web.mp4#t=0.1" poster="vids/web/posters/DJI_20260729_202639_875_video_2-web.jpg" muted loop playsinline preload="none"></video>
         </button>
         <button class="bento-item" data-type="video" data-src="vids/web/DJI_20260729_202711_287_video-web.mp4">
           <img src="vids/web/posters/DJI_20260729_202711_287_video-web.jpg" alt="" class="bento-poster">
+          <div class="bento-play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           <video src="vids/web/DJI_20260729_202711_287_video-web.mp4#t=0.1" poster="vids/web/posters/DJI_20260729_202711_287_video-web.jpg" muted loop playsinline preload="none"></video>
         </button>
         <button class="bento-item" data-type="video" data-src="vids/web/DJI_20260729_180516_454_video-web.mp4">
           <img src="vids/web/posters/DJI_20260729_180516_454_video-web.jpg" alt="" class="bento-poster">
+          <div class="bento-play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           <video src="vids/web/DJI_20260729_180516_454_video-web.mp4#t=0.1" poster="vids/web/posters/DJI_20260729_180516_454_video-web.jpg" muted loop playsinline preload="none"></video>
         </button>
         <button class="bento-item" data-type="video" data-src="vids/web/DJI_20260729_180942_915_video-web.mp4">
           <img src="vids/web/posters/DJI_20260729_180942_915_video-web.jpg" alt="" class="bento-poster">
+          <div class="bento-play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           <video src="vids/web/DJI_20260729_180942_915_video-web.mp4#t=0.1" poster="vids/web/posters/DJI_20260729_180942_915_video-web.jpg" muted loop playsinline preload="none"></video>
         </button>
         <button class="bento-item" data-type="image" data-src="vids/web/IMG_3251-web.jpg">
@@ -642,40 +658,49 @@
         </button>
         <button class="bento-item" data-type="video" data-src="vids/web/DJI_20260728_194401_811_video-web.mp4">
           <img src="vids/web/posters/DJI_20260728_194401_811_video-web.jpg" alt="" class="bento-poster">
+          <div class="bento-play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           <video src="vids/web/DJI_20260728_194401_811_video-web.mp4#t=0.1" poster="vids/web/posters/DJI_20260728_194401_811_video-web.jpg" muted loop playsinline preload="none"></video>
         </button>
         <button class="bento-item" data-type="video" data-src="vids/web/DJI_20260728_195335_128_video_eis-web.mp4">
           <img src="vids/web/posters/DJI_20260728_195335_128_video_eis-web.jpg" alt="" class="bento-poster">
+          <div class="bento-play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           <video src="vids/web/DJI_20260728_195335_128_video_eis-web.mp4#t=0.1" poster="vids/web/posters/DJI_20260728_195335_128_video_eis-web.jpg" muted loop playsinline preload="none"></video>
         </button>
       </div>
       <div class="bento-group" aria-hidden="true">
         <button class="bento-item" data-type="video" data-src="vids/web/DJI_20260729_180042_944_video-web.mp4" tabindex="-1">
           <img src="vids/web/posters/DJI_20260729_180042_944_video-web.jpg" alt="" class="bento-poster">
+          <div class="bento-play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           <video src="vids/web/DJI_20260729_180042_944_video-web.mp4#t=0.1" poster="vids/web/posters/DJI_20260729_180042_944_video-web.jpg" muted loop playsinline preload="none"></video>
         </button>
         <button class="bento-item" data-type="video" data-src="vids/web/DJI_20260729_190148_512_video-web.mp4" tabindex="-1">
           <img src="vids/web/posters/DJI_20260729_190148_512_video-web.jpg" alt="" class="bento-poster">
+          <div class="bento-play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           <video src="vids/web/DJI_20260729_190148_512_video-web.mp4#t=0.1" poster="vids/web/posters/DJI_20260729_190148_512_video-web.jpg" muted loop playsinline preload="none"></video>
         </button>
         <button class="bento-item" data-type="video" data-src="vids/web/DJI_20260729_201539_168_video_2-web.mp4" tabindex="-1">
           <img src="vids/web/posters/DJI_20260729_201539_168_video_2-web.jpg" alt="" class="bento-poster">
+          <div class="bento-play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           <video src="vids/web/DJI_20260729_201539_168_video_2-web.mp4#t=0.1" poster="vids/web/posters/DJI_20260729_201539_168_video_2-web.jpg" muted loop playsinline preload="none"></video>
         </button>
         <button class="bento-item" data-type="video" data-src="vids/web/DJI_20260729_202639_875_video_2-web.mp4" tabindex="-1">
           <img src="vids/web/posters/DJI_20260729_202639_875_video_2-web.jpg" alt="" class="bento-poster">
+          <div class="bento-play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           <video src="vids/web/DJI_20260729_202639_875_video_2-web.mp4#t=0.1" poster="vids/web/posters/DJI_20260729_202639_875_video_2-web.jpg" muted loop playsinline preload="none"></video>
         </button>
         <button class="bento-item" data-type="video" data-src="vids/web/DJI_20260729_202711_287_video-web.mp4" tabindex="-1">
           <img src="vids/web/posters/DJI_20260729_202711_287_video-web.jpg" alt="" class="bento-poster">
+          <div class="bento-play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           <video src="vids/web/DJI_20260729_202711_287_video-web.mp4#t=0.1" poster="vids/web/posters/DJI_20260729_202711_287_video-web.jpg" muted loop playsinline preload="none"></video>
         </button>
         <button class="bento-item" data-type="video" data-src="vids/web/DJI_20260729_180516_454_video-web.mp4" tabindex="-1">
           <img src="vids/web/posters/DJI_20260729_180516_454_video-web.jpg" alt="" class="bento-poster">
+          <div class="bento-play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           <video src="vids/web/DJI_20260729_180516_454_video-web.mp4#t=0.1" poster="vids/web/posters/DJI_20260729_180516_454_video-web.jpg" muted loop playsinline preload="none"></video>
         </button>
         <button class="bento-item" data-type="video" data-src="vids/web/DJI_20260729_180942_915_video-web.mp4" tabindex="-1">
           <img src="vids/web/posters/DJI_20260729_180942_915_video-web.jpg" alt="" class="bento-poster">
+          <div class="bento-play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           <video src="vids/web/DJI_20260729_180942_915_video-web.mp4#t=0.1" poster="vids/web/posters/DJI_20260729_180942_915_video-web.jpg" muted loop playsinline preload="none"></video>
         </button>
         <button class="bento-item" data-type="image" data-src="vids/web/IMG_3251-web.jpg" tabindex="-1">
@@ -683,10 +708,12 @@
         </button>
         <button class="bento-item" data-type="video" data-src="vids/web/DJI_20260728_194401_811_video-web.mp4" tabindex="-1">
           <img src="vids/web/posters/DJI_20260728_194401_811_video-web.jpg" alt="" class="bento-poster">
+          <div class="bento-play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           <video src="vids/web/DJI_20260728_194401_811_video-web.mp4#t=0.1" poster="vids/web/posters/DJI_20260728_194401_811_video-web.jpg" muted loop playsinline preload="none"></video>
         </button>
         <button class="bento-item" data-type="video" data-src="vids/web/DJI_20260728_195335_128_video_eis-web.mp4" tabindex="-1">
           <img src="vids/web/posters/DJI_20260728_195335_128_video_eis-web.jpg" alt="" class="bento-poster">
+          <div class="bento-play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
           <video src="vids/web/DJI_20260728_195335_128_video_eis-web.mp4#t=0.1" poster="vids/web/posters/DJI_20260728_195335_128_video_eis-web.jpg" muted loop playsinline preload="none"></video>
         </button>
       </div>
