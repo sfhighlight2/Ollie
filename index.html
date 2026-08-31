@@ -560,6 +560,8 @@
     .bento-lightbox img,.bento-lightbox video{max-height:70vh;}
     .bento-close{width:36px;height:36px;top:10px;right:10px;}
     a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--copper);outline-offset:2px;}
+    .btn-long{display:none;}
+    .btn-short{display:inline !important;}
   }
 </style>
 <noscript><style>.reveal{opacity:1 !important;transform:none !important;}</style></noscript>
@@ -890,7 +892,10 @@
       </div>
     </div>
     <div style="text-align:center;margin-top:40px;padding:0 20px;">
-      <a href="#pbdForm" class="btn btn-white btn-block">Click Here to Receive Our Private Jet Investor's Guide</a>
+      <a href="#pbdForm" class="btn btn-white btn-block">
+        <span class="btn-long">Click Here to Receive Our Private Jet Investor's Guide</span>
+        <span class="btn-short" style="display:none;">Investor's Guide</span>
+      </a>
     </div>
   </div>
 </section>
